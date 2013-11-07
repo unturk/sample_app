@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     #@user = User.new(params[:user]) Not safe and deprecated!
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Blog App!"
+      sign_in @user
+      flash[:success] = "Welcome to the Blog App!" 
       redirect_to @user
     else
       render 'new'
