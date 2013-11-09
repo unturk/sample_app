@@ -4,7 +4,7 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %> <!-- Display error messages for invalid signup form-->
+      <%= render 'shared/error_messages', object: f.object %> <!-- Display error messages for invalid signup form-->
 
       <%= f.label :name %>
       <%= f.text_field :name %>
